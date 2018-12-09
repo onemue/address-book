@@ -1,0 +1,25 @@
+<!DOCTYPE >
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>www.change.tm</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+		<script src="js/vue.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="app">
+			<my-header @click="greet">
+				<samp id="header_text" slot="left">通讯录</samp>
+				<img id="header_img" src="src/add.png" alt="" slot="right" @click="add">
+			</my-header>
+			<my-list :user-data="userData" @change-tiem-data='getTiemData'></my-list>
+			<my-float id="floar" :temdata="temData" @touchmove.prevent>
+				<a slot="random" href="javascript:" @click='random'>随机头像</a>
+				<button slot="left" @click="save">保存</button>
+				<button slot="right" @click="cancel">取消</button>
+			</my-float>
+		</div>
+		<script src='js/main.js'></script>
+	</body>
+</html>
